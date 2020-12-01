@@ -4,7 +4,7 @@ body {
     font-family: 'Major Mono Display', monospace;
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 37px;
 }
 
@@ -14,10 +14,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(63, 63, 63);
 }
 
 .page-header__title {
     white-space: nowrap;
+    color: white;
 }
 
 .page-main{
@@ -26,31 +28,88 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 30px;
+    height: 1500px;
 }
 
 .container {
     height: 100%;
     display: flex;
     flex-direction: column;
+    max-width: 768px;
+    margin: 0 auto;
 }
 
 .clock-item {
     height: 100px;
-    background-color: #fff;
     width: 100%;
     display: flex;
     margin-bottom: 20px;
 }
 
 .clock-item__face {
-    background-color: blue;
     width: 100px;
     max-height: 100%;
+    border: 5px solid white;
+    border-radius: 100%;
+    box-sizing: border-box;
+    position: relative;
+    margin-right: 10px;
+}
+
+.clock-item__hand {
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.clock-item__hand--second {
+    width: calc(50% - 5px);
+}
+
+.clock-item__hand--minute {
+    width: calc(50% - 10px);
+}
+
+.clock-item__hand--hour {
+    width: calc(50% - 20px);
 }
 
 .clock-item__text {
-    background-color: purple;
     flex-grow: 1;
+    background-color: rgb(63, 63, 63);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 10px;
+}
+
+.clock-item__city {
+    display: block;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: white;
+    text-align: center;
+    border-bottom: 1px solid white;
+    padding-bottom: calc((100px - 18px*2)/6);
+    box-sizing: border-box;
+}
+
+.clock-item__gmt {
+    display: block;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: white;
+    text-align: center;
+}
+
+.add-item {
+    display: none;
 }
 
 .add-button {
